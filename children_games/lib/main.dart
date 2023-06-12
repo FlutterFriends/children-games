@@ -79,12 +79,36 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(game.title),
       ),
-      body: Column(
-        children: <Widget>[
-          Image.network(game.image),
-          Text(game.title),
-          Text(game.description),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 300,
+              child: Image.network(
+                game.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              game.title,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                game.description,
+                style: const TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
