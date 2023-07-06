@@ -20,7 +20,7 @@ class ChildrenGamesApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  final List<Game> games = [
+  static const List<Game> games = [
     Game(
       title: 'Drawing game',
       description:
@@ -123,5 +123,6 @@ class Game {
   final String description;
   final String image;
 
-  Game({required this.title, required this.description, required this.image});
+  const Game(
+      {required this.title, required this.description, required this.image});
 }
