@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,6 +15,8 @@ jobs:
       with:
         flutter-version: '3.10.5'
     - name: Get dependencies
+      working-directory: children_games
       run: flutter pub get
     - name: Run tests
+      working-directory: children_games
       run: flutter test
