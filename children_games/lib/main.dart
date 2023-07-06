@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(ChildrenGamesApp());
+  runApp(const ChildrenGamesApp());
 }
 
 class ChildrenGamesApp extends StatelessWidget {
+  const ChildrenGamesApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,7 +14,7 @@ class ChildrenGamesApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -42,11 +44,13 @@ class HomePage extends StatelessWidget {
     ),
   ];
 
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Children Games'),
+        title: const Text('Children Games'),
       ),
       body: ListView.builder(
         itemCount: games.length,
@@ -71,7 +75,7 @@ class HomePage extends StatelessWidget {
 class DetailPage extends StatelessWidget {
   final Game game;
 
-  DetailPage({required this.game});
+  const DetailPage({super.key, required this.game});
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +87,7 @@ class DetailPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
+            SizedBox(
               height: 300,
               child: Image.network(
                 game.image,
