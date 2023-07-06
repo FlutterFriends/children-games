@@ -16,7 +16,7 @@ jobs:
         uses: subosito/flutter-action@v2
       - name: Build web app
         working-directory: children_games/
-        run: flutter build web --release
+        run: flutter build web --release --base-href /children-games/
       - name: Configure Git, commit, and push
         working-directory: children_games/
         run: |
