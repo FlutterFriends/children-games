@@ -13,9 +13,10 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
       - name: Build web app
-        run: flutter build web --release
         working-directory: children_games/
+        run: flutter build web --release
       - name: Configure Git, commit, and push
+        working-directory: children_games/
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
